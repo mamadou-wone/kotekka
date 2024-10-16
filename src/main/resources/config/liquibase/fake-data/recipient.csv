@@ -1,0 +1,11 @@
+id;uuid;status;first_name;last_name;phone_number;wallet_holder;created_by;created_date;last_modified_by;last_modified_date
+1;85754b56-ec3a-468b-9f77-858b6017dc26;BLOCKED;Scholastique;Menard;aventurer dir;ec41eceb-2f3d-41ba-bf54-569794327a58;du fait que antique;2024-10-15T15:28:13;de crainte que camarade;2024-10-15T23:10:18
+2;0ffe96b5-072a-4142-b337-1dc94773a7bf;PENDING;Arnaude;Bertrand;conseil munic;1098766a-c3cb-4419-9a7f-3a2ff5a32db8;comme coac coac;2024-10-15T22:53:12;toc-toc;2024-10-15T19:26:05
+3;6052e896-fbce-4e36-a1a5-e5a1424d9fea;BLOCKED;Cyrille;Da silva;vérifier coll;1a3dd82b-9de6-4e27-910c-581371ab1151;cadre recta diététiste;2024-10-15T17:12:18;masquer miam simple;2024-10-16T07:30:36
+4;3e5ab56a-7186-4b82-82ea-6bc273ce7c5e;BLOCKED;Stanislas;Bernard;badaboum énor;a7474409-9587-43b7-9782-0c202d5f8eaf;abandonner clientèle continuer;2024-10-16T03:15:15;contredire compenser pin-pon;2024-10-16T10:25:39
+5;cbb4c8b6-4945-4394-9d4b-be713206dc7c;BLOCKED;Aldric;Hubert;à raison de;23b73074-e7bc-44b9-8030-05fd0b25653d;marron téméraire;2024-10-15T23:30:11;même affirmer;2024-10-15T15:20:36
+6;ba9f6edb-7495-449c-ac06-ad8f48c68295;PENDING;Émile;Durand;moderne pourp;ad8bf067-ef24-48e2-9d76-67bc565f4bdb;hé;2024-10-16T04:47:40;foncer;2024-10-16T00:18:51
+7;74d77dec-1fc0-4edc-baf2-de2dc69fd1e1;PENDING;Odon;Giraud;d’autant que ;1025a63f-7b8f-47c7-8b9a-624b0cc3db58;souhaiter détruire spécialiste;2024-10-16T06:51:26;incorporer;2024-10-16T12:19:07
+8;bcbc71d4-b343-45bb-b889-b37f39bcce2c;ACTIVE;Dorian;Dupont;proche de en ;2c0bc76c-80e8-4d9c-afd2-9d37157ad5e4;comment téméraire rose;2024-10-16T06:52:14;en dedans de poser dès que;2024-10-16T02:28:24
+9;89dfaa54-d64d-4f51-9541-b0cdbc5b984b;PENDING;France;Joly;super de mani;bb085fd9-4ab6-4a2a-adb3-ad564c307c9e;cuicui bof turquoise;2024-10-16T01:06:04;pschitt mature;2024-10-16T07:51:56
+10;3d8a41f3-5bb5-42e1-895f-1df79e6f96b4;ACTIVE;Gautier;Faure;céder plic ch;a3e874c2-8481-40f6-925a-b8631fbb33ee;tant que bien que;2024-10-16T05:22:15;lâche;2024-10-15T23:54:24

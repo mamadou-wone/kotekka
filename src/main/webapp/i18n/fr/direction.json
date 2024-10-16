@@ -1,0 +1,9 @@
+{
+  "kotekkaApp": {
+    "Direction": {
+      "null": "",
+      "DEBIT": "DEBIT",
+      "CREDIT": "CREDIT"
+    }
+  }
+}

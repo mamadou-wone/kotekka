@@ -1,0 +1,76 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (moneyRequest(); as moneyRequestRef) {
+      <div>
+        <h2 data-cy="moneyRequestDetailsHeading"><span jhiTranslate="kotekkaApp.moneyRequest.detail.title">Money Request</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ moneyRequestRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.moneyRequest.uuid">Uuid</span></dt>
+          <dd>
+            <span>{{ moneyRequestRef.uuid }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.moneyRequest.status">Status</span></dt>
+          <dd>
+            <span [jhiTranslate]="'kotekkaApp.RequestStatus.' + (moneyRequestRef.status ?? 'null')">{{
+              { null: '', PENDING: 'PENDING', SENT: 'SENT', PROCESSED: 'PROCESSED', FAILED: 'FAILED' }[moneyRequestRef.status ?? 'null']
+            }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.moneyRequest.otherHolder">Other Holder</span></dt>
+          <dd>
+            <span>{{ moneyRequestRef.otherHolder }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.moneyRequest.amount">Amount</span></dt>
+          <dd>
+            <span>{{ moneyRequestRef.amount }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.moneyRequest.description">Description</span></dt>
+          <dd>
+            <span>{{ moneyRequestRef.description }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.moneyRequest.currency">Currency</span></dt>
+          <dd>
+            <span>{{ moneyRequestRef.currency }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.moneyRequest.walletHolder">Wallet Holder</span></dt>
+          <dd>
+            <span>{{ moneyRequestRef.walletHolder }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.moneyRequest.createdBy">Created By</span></dt>
+          <dd>
+            <span>{{ moneyRequestRef.createdBy }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.moneyRequest.createdDate">Created Date</span></dt>
+          <dd>
+            <span>{{ moneyRequestRef.createdDate | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.moneyRequest.lastModifiedBy">Last Modified By</span></dt>
+          <dd>
+            <span>{{ moneyRequestRef.lastModifiedBy }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.moneyRequest.lastModifiedDate">Last Modified Date</span></dt>
+          <dd>
+            <span>{{ moneyRequestRef.lastModifiedDate | formatMediumDatetime }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Retour</span>
+        </button>
+
+        <button type="button" [routerLink]="['/money-request', moneyRequestRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editer</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

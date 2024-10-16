@@ -1,0 +1,9 @@
+{
+  "kotekkaApp": {
+    "ProductStatus": {
+      "null": "",
+      "Active": "Active",
+      "Inactive": "Inactive"
+    }
+  }
+}
