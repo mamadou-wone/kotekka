@@ -1,0 +1,67 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (organisation(); as organisationRef) {
+      <div>
+        <h2 data-cy="organisationDetailsHeading"><span jhiTranslate="kotekkaApp.organisation.detail.title">Organisation</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ organisationRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.organisation.name">Name</span></dt>
+          <dd>
+            <span>{{ organisationRef.name }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.organisation.type">Type</span></dt>
+          <dd>
+            <span [jhiTranslate]="'kotekkaApp.OrgType.' + (organisationRef.type ?? 'null')">{{
+              {
+                null: '',
+                UNIVERSITY: 'UNIVERSITY',
+                CORPORATION: 'CORPORATION',
+                NONPROFIT: 'NONPROFIT',
+                GOVERNMENT: 'GOVERNMENT',
+                OTHER: 'OTHER',
+              }[organisationRef.type ?? 'null']
+            }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.organisation.parent">Parent</span></dt>
+          <dd>
+            <span>{{ organisationRef.parent }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.organisation.location">Location</span></dt>
+          <dd>
+            <span>{{ organisationRef.location }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.organisation.headcount">Headcount</span></dt>
+          <dd>
+            <span>{{ organisationRef.headcount }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.organisation.createdBy">Created By</span></dt>
+          <dd>
+            <span>{{ organisationRef.createdBy }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.organisation.createdDate">Created Date</span></dt>
+          <dd>
+            <span>{{ organisationRef.createdDate | formatMediumDatetime }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Retour</span>
+        </button>
+
+        <button type="button" [routerLink]="['/organisation', organisationRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editer</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,78 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (failedAttemptHistory(); as failedAttemptHistoryRef) {
+      <div>
+        <h2 data-cy="failedAttemptHistoryDetailsHeading">
+          <span jhiTranslate="kotekkaApp.failedAttemptHistory.detail.title">Failed Attempt History</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ failedAttemptHistoryRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.failedAttemptHistory.login">Login</span></dt>
+          <dd>
+            <span>{{ failedAttemptHistoryRef.login }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.failedAttemptHistory.ipAddress">Ip Address</span></dt>
+          <dd>
+            <span>{{ failedAttemptHistoryRef.ipAddress }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.failedAttemptHistory.isAfterLock">Is After Lock</span></dt>
+          <dd>
+            <span>{{ failedAttemptHistoryRef.isAfterLock }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.failedAttemptHistory.app">App</span></dt>
+          <dd>
+            <span [jhiTranslate]="'kotekkaApp.App.' + (failedAttemptHistoryRef.app ?? 'null')">{{
+              { null: '', MOBILE: 'MOBILE', WEB: 'WEB', MERCHANT: 'MERCHANT', AGENT: 'AGENT', PORTAL: 'PORTAL' }[
+                failedAttemptHistoryRef.app ?? 'null'
+              ]
+            }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.failedAttemptHistory.action">Action</span></dt>
+          <dd>
+            <span [jhiTranslate]="'kotekkaApp.Action.' + (failedAttemptHistoryRef.action ?? 'null')">{{
+              {
+                null: '',
+                LOGIN: 'LOGIN',
+                PHONENUMBER_CHECK: 'PHONENUMBER_CHECK',
+                EMAIL_CHECK: 'EMAIL_CHECK',
+                PASSWORD_RESET: 'PASSWORD_RESET',
+                DEVICE_CHECK: 'DEVICE_CHECK',
+                TRANSACTION: 'TRANSACTION',
+              }[failedAttemptHistoryRef.action ?? 'null']
+            }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.failedAttemptHistory.device">Device</span></dt>
+          <dd>
+            <span>{{ failedAttemptHistoryRef.device }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.failedAttemptHistory.createdDate">Created Date</span></dt>
+          <dd>
+            <span>{{ failedAttemptHistoryRef.createdDate | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="kotekkaApp.failedAttemptHistory.reason">Reason</span></dt>
+          <dd>
+            <span>{{ failedAttemptHistoryRef.reason }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Retour</span>
+        </button>
+
+        <button type="button" [routerLink]="['/failed-attempt-history', failedAttemptHistoryRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editer</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

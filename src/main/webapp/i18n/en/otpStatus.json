@@ -1,0 +1,11 @@
+{
+  "kotekkaApp": {
+    "OtpStatus": {
+      "null": "",
+      "PENDING": "PENDING",
+      "VALID": "VALID",
+      "REJECTED": "REJECTED",
+      "EXPIRED": "EXPIRED"
+    }
+  }
+}
